@@ -1,0 +1,8 @@
+/.vs/*
+/Notify/Notify.Android/bin/*
+/Notify/Notify.Android/obj/*
+/Notify/Notify.iOS/obj/*
+/Notify/Notify/bin/*
+/Notify/Notify/obj/*
+/Notify/Notify.iOS/bin/*
+/Notify/Notify.iOS/obj/*

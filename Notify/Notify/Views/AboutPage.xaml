@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notify.Views.AboutPage"
+             Title="{Binding Title}">
+    
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Hint: Try using the new words you learn here in your everyday life."
+                TextColor="{StaticResource _colorTextPrimary}"
+                HorizontalOptions="Center"
+                Padding="15" Margin="15"
+                VerticalOptions="Start" />
+        <Label x:Name="stackLabel"
+                Text="Click the button to create a local notification."
+                TextColor="{StaticResource _colorTextSecondary}"
+                TextType="Html"
+                HorizontalOptions="Center"
+                VerticalOptions="Start" />
+        <Button Text="Create Notification"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Padding="15"
+            Margin="15"
+            Clicked="OnScheduleClick"/>
+    </StackLayout>
+    
+
+</ContentPage>
