@@ -82,6 +82,17 @@ namespace Notify.Droid.Alarms
 			return alarms;
 		}
 
+		public Alarm GetAlarmById(int id)
+        {
+			var all_alarms = GetAlarms();
+			foreach (Alarm alarm in all_alarms)
+            {
+				if (alarm.Id == id)
+					return alarm;
+            }
+			return null;
+        }
+
 		/// <summary>
 		/// Delete the specified alarm instance from the SharedPreferences.
 		/// This method iterates through the alarms stored in the SharedPreferences,

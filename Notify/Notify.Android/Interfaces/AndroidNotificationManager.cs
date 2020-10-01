@@ -36,7 +36,7 @@ namespace Notify.Droid.Interfaces
                 .SetContentText(english)
                 .SetLargeIcon(BitmapFactory.DecodeResource(context.Resources, Resource.Drawable.main_icon))
                 .SetSmallIcon(Resource.Drawable.logo_small)
-                .SetDefaults((int)NotificationDefaults.Vibrate);
+                .SetDefaults((int)NotificationDefaults.All);
 
             if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
             {

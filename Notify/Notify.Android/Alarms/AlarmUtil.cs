@@ -50,8 +50,8 @@ namespace Notify.Droid.Alarms
 			}
 
 			// Set inexact repeating
-			//alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, notifyTimeInInMilliseconds, pendingIntent);
-			alarmManager.SetRepeating(AlarmType.RtcWakeup, notifyTimeInInMilliseconds, AlarmManager.IntervalDay, pendingIntent);
+			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, notifyTimeInInMilliseconds, pendingIntent);
+			//alarmManager.SetRepeating(AlarmType.RtcWakeup, notifyTimeInInMilliseconds, AlarmManager.IntervalDay, pendingIntent);
 			return alarm.Id;
 		}
 

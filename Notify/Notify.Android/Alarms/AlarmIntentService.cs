@@ -87,6 +87,16 @@ namespace Notify.Droid.Alarms
 
             ReceiveNotification(randomTranslation.German, randomTranslation.English);
 
+            // reschedule alarm here
+            var alarmStorage = new AlarmStorage(context);
+            var alarm = alarmStorage.GetAlarmById(id);
+            var util = new AlarmUtil(context);
+            if (alarm != null)
+            {
+                util.ScheduleAlarm(alarm);
+                Android.Util.Log.Verbose("notifyFilter", $"Rescheduled {alarm.Id}"); // adb logcat -s notifyFilter
+            }
+
             StopForeground(false);
 
             return id;
