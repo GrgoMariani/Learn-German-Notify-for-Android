@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Notify.Views.Dialogs.ChooseTimeDialog">
+             x:Class="Notify.Views.Dialogs.ChooseTimeDialog"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Label Text="Select the time below to be reminded at." TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium"/>

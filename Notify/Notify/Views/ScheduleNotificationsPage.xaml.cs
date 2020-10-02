@@ -29,7 +29,7 @@ namespace Notify.Views
 
             InitializeComponent();
 
-            Title = "Schedule Notification";
+            Title = "Alarms";
 
             BindingContext = this;
         }

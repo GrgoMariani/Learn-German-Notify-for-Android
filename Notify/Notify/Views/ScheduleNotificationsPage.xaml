@@ -4,28 +4,30 @@
              x:Class="Notify.Views.ScheduleNotificationsPage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout Margin="0,0,0,0"
+        <StackLayout VerticalOptions="FillAndExpand"
              x:Name="stackLayout">
             <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <ListView x:Name="listview" ItemsSource="{Binding ScheduledTimes}" HasUnevenRows="true" BackgroundColor="White">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.ContextActions>
-                                    <MenuItem Clicked="OnDelete"
+                <Grid AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <ListView x:Name="listview" ItemsSource="{Binding ScheduledTimes}" HasUnevenRows="true" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Clicked="OnDelete"
                                       CommandParameter="{Binding .}"
                                       Text="Delete" IsDestructive="True" />
-                                </ViewCell.ContextActions>
-                                <Grid Padding="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Grid.Row="1"
+                                    </ViewCell.ContextActions>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding TimeToString}"
                                        FontSize="Large"
@@ -33,11 +35,13 @@
                                        VerticalOptions="CenterAndExpand" 
                                        HorizontalOptions="CenterAndExpand"
                                        TextColor="{StaticResource _colorTextPrimary}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
                 <ImageButton Source="add_alarm.png"
                              BackgroundColor="{StaticResource _colorAccentSemiTransparent}"
                              AbsoluteLayout.LayoutFlags="PositionProportional"  HeightRequest="60"

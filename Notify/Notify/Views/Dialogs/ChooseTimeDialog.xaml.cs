@@ -23,6 +23,8 @@ namespace Notify.Views.Dialogs
             InitializeComponent();
             scheduledTime = new ItemScheduledTime();
             _timePicker.Time = DateTime.Now.TimeOfDay;
+            Title = "New Alarm";
+            BindingContext = this;
         }
 
         public ChooseTimeDialog(ItemScheduledTime itemScheduledTime)
@@ -31,6 +33,7 @@ namespace Notify.Views.Dialogs
             scheduledTime = itemScheduledTime;
             var newTime = new TimeSpan(scheduledTime.Hour, scheduledTime.Minute, 0);
             _timePicker.Time = newTime;
+            BindingContext = this;
         }
 
 
