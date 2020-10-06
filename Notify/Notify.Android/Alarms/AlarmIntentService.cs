@@ -77,7 +77,23 @@ namespace Notify.Droid.Alarms
             var sqliteController = new AndroidSQLite();
             var dbPath = sqliteController.GetPlatformDBPath("translations.db3");
             var connection = sqliteController.GetConnection(dbPath);
-            var randomTranslation = connection.Query<ItemTranslation>("SELECT * FROM ItemTranslation ORDER BY RANDOM() LIMIT 1").First();
+
+            var alarmStorage = new AlarmStorage(context);
+            var alarm = alarmStorage.GetAlarmById(id);
+
+            string difficulty;
+            if (alarm == null || alarm.Difficulty == null)
+            {
+                difficulty = "Other";
+            }
+            else
+            {
+                difficulty = alarm.Difficulty;
+            }
+
+            Android.Util.Log.Verbose("notifyFilter", $"SCHEDULED DIFF TRIGGERED {difficulty}"); // adb logcat -s notifyFilter
+
+            var randomTranslation = connection.Query<ItemTranslation>($"SELECT * FROM ItemTranslation WHERE Difficulty = '{difficulty}' ORDER BY RANDOM() LIMIT 1").First();
 
             PendingIntent pendingIntent = PendingIntent.GetActivity(context, id, intent, PendingIntentFlags.OneShot);
 
@@ -88,8 +104,7 @@ namespace Notify.Droid.Alarms
             ReceiveNotification(randomTranslation.German, randomTranslation.English);
 
             // reschedule alarm here
-            var alarmStorage = new AlarmStorage(context);
-            var alarm = alarmStorage.GetAlarmById(id);
+            
             var util = new AlarmUtil(context);
             if (alarm != null)
             {

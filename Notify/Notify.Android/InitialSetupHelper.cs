@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 using Android.App;
@@ -130,11 +131,29 @@ namespace Notify.Droid
             return true;
         }
 
-        public bool IsSetup()
+        public bool IsSetup(string md5_to_compare)
         {
             var translationDBPath = GetPlatformDBPath(filename);
             var compressedTranslationDBPath = AppendZipExtension(translationDBPath);
-            return File.Exists(translationDBPath) && !File.Exists(compressedTranslationDBPath);
+            if (!File.Exists(translationDBPath))
+                return false;
+            string md5_result;
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(translationDBPath))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    md5_result = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+            if(md5_result != md5_to_compare)
+            {
+                File.Delete(translationDBPath);
+                if (File.Exists(compressedTranslationDBPath))
+                    File.Delete(compressedTranslationDBPath);
+                return false;
+            }
+            return !File.Exists(compressedTranslationDBPath);
         }
     }
 }

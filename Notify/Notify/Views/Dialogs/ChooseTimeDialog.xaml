@@ -7,7 +7,7 @@
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Label Text="Set Difficulty" TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
             <Picker x:Name="_difficultyPicker"
-                    HorizontalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
                     SelectedIndex="{Binding pickerIndex}"
                     HorizontalTextAlignment="Center"
@@ -26,7 +26,8 @@
                     Time="12:00:00"
                     Format="HH:mm" 
                     HorizontalOptions="CenterAndExpand"
-                    TextColor="{StaticResource _colorTextPrimary}"/>
+                    TextColor="{StaticResource _colorTextPrimary}"
+                        />
             <Button Text="Schedule New Time"
                     HorizontalOptions="Center"
                     VerticalOptions="Start"

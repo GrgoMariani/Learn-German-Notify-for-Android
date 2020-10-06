@@ -24,6 +24,8 @@ namespace Notify.Droid.Interfaces
 
         public int SetAlarm(int hour, int minute, string difficulty)
         {
+
+            Android.Util.Log.Verbose("notifyFilter", $"SCHEDULED DIFF Set {difficulty}"); // adb logcat -s notifyFilter
             var context = Android.App.Application.Context;
 
             var util = new AlarmUtil(context);

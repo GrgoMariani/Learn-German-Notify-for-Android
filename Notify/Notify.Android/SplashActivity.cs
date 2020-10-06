@@ -8,6 +8,8 @@ using Notify.Droid.Alarms;
 [Activity(Theme = "@style/SplashTheme.Splash", MainLauncher = true, NoHistory = true, Icon = "@mipmap/icon", RoundIcon = "@mipmap/icon_round")]
 public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 {
+    const string LATEST_DICT_HASH = "7aa577ccd451b0330a226452645094f1";
+
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCom
     void SetupRequiredFilesAndStart()
     {
         InitialSetupHelper initialSetupHelper = new InitialSetupHelper("translations.db3");
-        if (!initialSetupHelper.IsSetup())
+        if (!initialSetupHelper.IsSetup(LATEST_DICT_HASH))
             initialSetupHelper.CopyDBFromAssets();
 
         // Cancel and set all alarms

@@ -56,6 +56,8 @@ namespace Notify.Views.Dialogs
 
             var settingsDatabaseController = new SettingsDatabaseController();
             var curr_settings = settingsDatabaseController.GetSettings();
+
+            pickerIndex = _difficultyPicker.SelectedIndex;
             switch (pickerIndex)
             {
                 case 0: curr_settings.LastDifficultyChosen = "A1"; break;
