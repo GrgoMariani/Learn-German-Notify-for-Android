@@ -33,7 +33,15 @@
                                        FontSize="Large"
                                        FontAttributes="Bold"
                                        VerticalOptions="CenterAndExpand" 
-                                       HorizontalOptions="CenterAndExpand"
+                                       HorizontalOptions="EndAndExpand"
+                                       TextColor="{StaticResource _colorTextPrimary}"/>
+                                        <Label Grid.Row="1"
+                                       Grid.Column="2"
+                                       Text="{Binding Difficulty}"
+                                       FontSize="Small"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="CenterAndExpand" 
+                                       HorizontalOptions="EndAndExpand"
                                        TextColor="{StaticResource _colorTextPrimary}"/>
                                     </Grid>
                                 </ViewCell>
