@@ -12,6 +12,7 @@ namespace Notify.Models
         public int? ID { get; set; }
         public int Hour { get; set; }
         public int Minute { get; set; }
+        public string Difficulty { get; set; }
 
         public string TimeToString
         {

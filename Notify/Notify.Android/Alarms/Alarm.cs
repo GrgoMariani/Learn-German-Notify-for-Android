@@ -19,6 +19,7 @@ namespace Notify.Droid.Alarms
 		public int Day { get; set; }
 		public int Hour { get; set; }
 		public int Minute { get; set; }
+		public string Difficulty { get; set; }
 
 		public Alarm() { }
 
@@ -30,6 +31,7 @@ namespace Notify.Droid.Alarms
 			Day = inObj.ReadInt();
 			Hour = inObj.ReadInt();
 			Minute = inObj.ReadInt();
+			Difficulty = inObj.ReadString();
 		}
 
 		public DateTime GetTriggerTime()
@@ -56,6 +58,7 @@ namespace Notify.Droid.Alarms
 			parcel.WriteInt(Day);
 			parcel.WriteInt(Hour);
 			parcel.WriteInt(Minute);
+			parcel.WriteString(Difficulty);
 		}
 
 		public string ToJson()
@@ -67,6 +70,7 @@ namespace Notify.Droid.Alarms
 			jsonObject.Put("day", Day);
 			jsonObject.Put("hour", Hour);
 			jsonObject.Put("minute", Minute);
+			jsonObject.Put("difficulty", Difficulty);
 			return jsonObject.ToString();
 		}
 
@@ -80,7 +84,8 @@ namespace Notify.Droid.Alarms
 				Month = jsonObject.GetInt("month"),
 				Day = jsonObject.GetInt("day"),
 				Hour = jsonObject.GetInt("hour"),
-				Minute = jsonObject.GetInt("minute")
+				Minute = jsonObject.GetInt("minute"),
+				Difficulty = jsonObject.GetString("difficulty")
 			};
 		}
 

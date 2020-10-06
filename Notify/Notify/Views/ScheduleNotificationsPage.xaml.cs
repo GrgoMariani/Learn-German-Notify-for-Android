@@ -49,13 +49,6 @@ namespace Notify.Views
         }
 
 
-        public async void OnEdit(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            var itemToEdit = (ItemScheduledTime)mi.CommandParameter;
-            await Navigation.PushAsync(new ChooseTimeDialog(itemToEdit));
-        }
-
         public void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);

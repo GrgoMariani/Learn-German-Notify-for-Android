@@ -11,5 +11,6 @@ namespace Notify.Models
         [PrimaryKey, AutoIncrement]
         public int? ID { get; set; }
         public bool IsDatabaseSetUp { get; set; }
+        public string LastDifficultyChosen { get; set; }
     }
 }

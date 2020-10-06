@@ -10,7 +10,7 @@ namespace Notify.Interfaces
     /// </summary>
     public interface  ISetAlarm
     {
-        int SetAlarm(int hour, int minute);
+        int SetAlarm(int hour, int minute, string difficulty);
 
         void CancelAlarm(int id);
     }

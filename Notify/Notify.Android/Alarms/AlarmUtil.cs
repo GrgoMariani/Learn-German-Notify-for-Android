@@ -35,6 +35,7 @@ namespace Notify.Droid.Alarms
 			intent.PutExtra("day", alarm.Day);
 			intent.PutExtra("hour", alarm.Hour);
 			intent.PutExtra("minute", alarm.Minute);
+			intent.PutExtra("difficulty", alarm.Difficulty);
 
 			Android.Util.Log.Verbose("notifyFilter", $"register {alarm.Id}"); // adb logcat -s notifyFilter
 

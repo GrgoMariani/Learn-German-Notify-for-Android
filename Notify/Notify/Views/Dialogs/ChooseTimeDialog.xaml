@@ -5,7 +5,22 @@
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Select the time below to be reminded at." TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium"/>
+            <Label Text="Set Difficulty" TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Picker x:Name="_difficultyPicker"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Start"
+                    SelectedIndex="{Binding pickerIndex}"
+                    HorizontalTextAlignment="Center"
+                    >
+                <Picker.Items>
+                    <x:String>A1</x:String>
+                    <x:String>A2</x:String>
+                    <x:String>B1</x:String>
+                    <x:String>B2</x:String>
+                    <x:String>Other</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Select the time below to be reminded at." TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
             <TimePicker x:Name="_timePicker"
                     FontSize="Header"
                     Time="12:00:00"

@@ -22,15 +22,13 @@ namespace Notify.Droid.Interfaces
         public AndroidSetAlarm() { }
 
 
-        public int SetAlarm(int hour, int minute)
+        public int SetAlarm(int hour, int minute, string difficulty)
         {
-            //Call AlarmUtil schedule
-            // DO NOT USE THIS
             var context = Android.App.Application.Context;
 
             var util = new AlarmUtil(context);
             var alarmStorage = new AlarmStorage(context);
-            var alarm = alarmStorage.SaveAlarm(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute);
+            var alarm = alarmStorage.SaveAlarm(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, difficulty);
             return util.ScheduleAlarm(alarm);
         }
 

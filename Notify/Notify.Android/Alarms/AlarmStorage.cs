@@ -48,7 +48,7 @@ namespace Notify.Droid.Alarms
 		/// <param name="day">Day.</param>
 		/// <param name="hour">Hour.</param>
 		/// <param name="minute">Minute.</param>
-		public Alarm SaveAlarm(int year, int month, int day, int hour, int minute)
+		public Alarm SaveAlarm(int year, int month, int day, int hour, int minute, string difficulty)
 		{
 			var alarm = new Alarm
 			{
@@ -58,7 +58,8 @@ namespace Notify.Droid.Alarms
 				Month = month,
 				Day = day,
 				Hour = hour,
-				Minute = minute
+				Minute = minute,
+				Difficulty = difficulty
 			};
 
 			ISharedPreferencesEditor editor = sharedPreferences.Edit();
