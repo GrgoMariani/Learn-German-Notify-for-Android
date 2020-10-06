@@ -12,7 +12,7 @@ namespace Notify.Interfaces
 
         int ScheduleNotification(int id);
 
-        void ReceiveNotification(string title, string message);
+        void ReceiveNotification(Notify.Models.ItemTranslation itemTranslation);
     }
 
 }

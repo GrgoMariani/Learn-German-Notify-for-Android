@@ -73,24 +73,18 @@ namespace Notify.Droid.Interfaces
 
             manager.Notify(id, notification);
 
-            ReceiveNotification(randomTranslation.German, randomTranslation.English);
+            ReceiveNotification(randomTranslation);
             return id;
         }
 
-        public void ReceiveNotification(string title, string message)
+        public void ReceiveNotification(ItemTranslation itemTranslation)
         {
             var args = new NotificationEventArgs()
             {
-                Title = title,
-                Message = message,
+                Title = itemTranslation.German,
+                Message = itemTranslation.English,
             };
             NotificationReceived?.Invoke(null, args);
-            // Save result to history db
-            var itemTranslation = new ItemTranslation()
-            {
-                German = title,
-                English = message
-            };
             var historyDatabaseController = new HistoryDatabaseController();
             historyDatabaseController.SaveToHistory(itemTranslation);
         }

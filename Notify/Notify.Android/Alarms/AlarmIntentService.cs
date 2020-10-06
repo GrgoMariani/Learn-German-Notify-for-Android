@@ -101,7 +101,7 @@ namespace Notify.Droid.Alarms
 
             StartForeground(id, notification);
 
-            ReceiveNotification(randomTranslation.German, randomTranslation.English);
+            ReceiveNotification(randomTranslation);
 
             // reschedule alarm here
             
@@ -117,21 +117,16 @@ namespace Notify.Droid.Alarms
             return id;
         }
 
-        public void ReceiveNotification(string title, string message)
+        public void ReceiveNotification(ItemTranslation itemTranslation)
         {
             var args = new NotificationEventArgs()
             {
-                Title = title,
-                Message = message,
+                Title = itemTranslation.German,
+                Message = itemTranslation.English,
             };
             NotificationReceived?.Invoke(null, args);
             // Save result to history db
-            var itemTranslation = new ItemTranslation()
-            {
-                German = title,
-                English = message
-            };
-
+            itemTranslation.id = null;
             var sqliteController = new AndroidSQLite();
             var dbPath = sqliteController.GetPlatformDBPath("history.db3");
             var connection = sqliteController.GetConnection(dbPath);

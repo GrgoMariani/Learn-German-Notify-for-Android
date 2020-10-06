@@ -1,4 +1,5 @@
 ﻿using Notify.Data;
+using Notify.Interfaces;
 using Notify.Models;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,15 @@ namespace Notify.Views
             foreach (var historyResult in historyResults)
             {
                 HistoryItems.Add(historyResult);
+            }
+        }
+
+        public async void lvItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var tapped = e.Item as ItemTranslation;
+            if (!string.IsNullOrEmpty(tapped.EnglishExample) && !string.IsNullOrEmpty(tapped.GermanExample)
+            {
+                DependencyService.Get<IMessage>().LongAlert($"{tapped.GermanExample}\n{tapped.EnglishExample}");
             }
         }
     }

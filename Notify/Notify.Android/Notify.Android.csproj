@@ -93,6 +93,7 @@
     <Compile Include="Interfaces\AndroidNotificationManager.cs" />
     <Compile Include="Interfaces\AndroidSetAlarm.cs" />
     <Compile Include="Interfaces\AndroidSQLite.cs" />
+    <Compile Include="Interfaces\MessageAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

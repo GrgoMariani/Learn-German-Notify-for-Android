@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <ListView x:Name="listview" ItemsSource="{Binding HistoryItems}" HasUnevenRows="true">
+                <ListView x:Name="listview" ItemsSource="{Binding HistoryItems}" HasUnevenRows="true" ItemTapped="lvItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

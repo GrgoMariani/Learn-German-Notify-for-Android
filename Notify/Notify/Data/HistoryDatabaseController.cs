@@ -35,6 +35,7 @@ namespace Notify.Data
         {
             lock(locker)
             {
+                itemTranslation.id = null;
                 // Save this item to history
                 connection.Insert(itemTranslation);
             }
