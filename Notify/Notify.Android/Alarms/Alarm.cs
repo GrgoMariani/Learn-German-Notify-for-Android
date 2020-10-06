@@ -77,6 +77,15 @@ namespace Notify.Droid.Alarms
 		public static Alarm FromJson(String json)
 		{
 			var jsonObject = new JSONObject(json);
+			string diff;
+            try
+			{
+				diff = jsonObject.GetString("difficulty");
+			}
+			catch
+            {
+				diff = "Other";
+            }
 			return new Alarm
 			{
 				Id = jsonObject.GetInt("id"),
@@ -85,7 +94,7 @@ namespace Notify.Droid.Alarms
 				Day = jsonObject.GetInt("day"),
 				Hour = jsonObject.GetInt("hour"),
 				Minute = jsonObject.GetInt("minute"),
-				Difficulty = jsonObject.GetString("difficulty")
+				Difficulty = diff
 			};
 		}
 

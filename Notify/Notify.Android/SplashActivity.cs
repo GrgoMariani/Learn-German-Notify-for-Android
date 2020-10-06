@@ -41,8 +41,6 @@ public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCom
             util.CancelAlarm(alarm);
             util.ScheduleAlarm(alarm);
         }
-            
-
         StartActivity(new Intent(Application.Context, typeof(MainActivity)));
     }
 }
