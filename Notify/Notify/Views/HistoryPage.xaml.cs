@@ -47,7 +47,7 @@ namespace Notify.Views
             var tapped = e.Item as ItemTranslation;
             if (!string.IsNullOrEmpty(tapped.EnglishExample) && !string.IsNullOrEmpty(tapped.GermanExample))
             {
-                DependencyService.Get<IMessage>().LongAlert($"{tapped.GermanExample}\n{tapped.EnglishExample}");
+                DependencyService.Get<IMessage>().LongAlert($"{tapped.GermanExample}\n\n\n{tapped.EnglishExample}");
             }
         }
     }

@@ -10,6 +10,8 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
                     SelectedIndex="{Binding pickerIndex}"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource _colorTextPrimary}"
                     HorizontalTextAlignment="Center"
                     >
                 <Picker.Items>
