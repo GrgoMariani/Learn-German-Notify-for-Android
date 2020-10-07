@@ -34,7 +34,7 @@ namespace Notify.Views.Dialogs
                 curr_settings = new ItemSettings()
                 {
                     IsDatabaseSetUp = true,
-                    LastDifficultyChosen = "Other"
+                    LastDifficultyChosen = "Advanced"
                 };
                 settingsDatabaseController.SaveSettings(curr_settings);
             }
@@ -64,7 +64,7 @@ namespace Notify.Views.Dialogs
                 case 1: curr_settings.LastDifficultyChosen = "A2"; break;
                 case 2: curr_settings.LastDifficultyChosen = "B1"; break;
                 case 3: curr_settings.LastDifficultyChosen = "B2"; break;
-                case 4: curr_settings.LastDifficultyChosen = "Other"; break;
+                case 4: curr_settings.LastDifficultyChosen = "Advanced"; break;
             }
             settingsDatabaseController.SaveSettings(curr_settings);
             scheduledTime.Difficulty = curr_settings.LastDifficultyChosen;

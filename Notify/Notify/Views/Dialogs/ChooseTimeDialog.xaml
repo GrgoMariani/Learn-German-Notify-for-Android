@@ -10,8 +10,9 @@
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Start"
                     SelectedIndex="{Binding pickerIndex}"
+                    FontSize="Large"
                     FontAttributes="Bold"
-                    TextColor="{StaticResource _colorTextPrimary}"
+                    TextColor="{StaticResource _colorTextSecondary}"
                     HorizontalTextAlignment="Center"
                     >
                 <Picker.Items>
@@ -19,7 +20,7 @@
                     <x:String>A2</x:String>
                     <x:String>B1</x:String>
                     <x:String>B2</x:String>
-                    <x:String>Other</x:String>
+                    <x:String>Advanced</x:String>
                 </Picker.Items>
             </Picker>
             <Label Text="Select the time below to be reminded at." TextColor="{StaticResource _colorTextPrimary}" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
@@ -30,7 +31,7 @@
                     HorizontalOptions="CenterAndExpand"
                     TextColor="{StaticResource _colorTextPrimary}"
                         />
-            <Button Text="Schedule New Time"
+            <Button Text="Schedule"
                     HorizontalOptions="Center"
                     VerticalOptions="Start"
                     Clicked="OnCloseButtonClicked"/>

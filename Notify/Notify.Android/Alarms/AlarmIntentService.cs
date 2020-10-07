@@ -21,8 +21,6 @@ namespace Notify.Droid.Alarms
         const string channelName = "Default";
         const string channelDescription = "The default channel for notifications.";
 
-        public const string TitleKey = "title";
-        public const string MessageKey = "message";
         bool channelInitialized;
 
 
@@ -84,7 +82,7 @@ namespace Notify.Droid.Alarms
             string difficulty;
             if (alarm == null || alarm.Difficulty == null)
             {
-                difficulty = "Other";
+                difficulty = "Advanced";
             }
             else
             {
@@ -102,8 +100,6 @@ namespace Notify.Droid.Alarms
             StartForeground(id, notification);
 
             ReceiveNotification(randomTranslation);
-
-            // reschedule alarm here
             
             var util = new AlarmUtil(context);
             if (alarm != null)

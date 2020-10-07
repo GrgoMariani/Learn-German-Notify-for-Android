@@ -84,7 +84,7 @@ namespace Notify.Droid.Alarms
 			}
 			catch
             {
-				diff = "Other";
+				diff = "Advanced";
             }
 			return new Alarm
 			{

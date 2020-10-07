@@ -8,7 +8,7 @@ using Notify.Droid.Alarms;
 [Activity(Theme = "@style/SplashTheme.Splash", MainLauncher = true, NoHistory = true, Icon = "@mipmap/icon", RoundIcon = "@mipmap/icon_round")]
 public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 {
-    const string LATEST_DICT_HASH = "7aa577ccd451b0330a226452645094f1";
+    const string LATEST_DICT_HASH = "22d2b751cf18928e46d8e4fa24f9d56b";
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
